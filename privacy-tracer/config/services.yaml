@@ -1,0 +1,34 @@
+services:
+  - name: user-service
+    endpoints:
+      - /login
+      - /register
+    methods:
+      - POST
+    tracks:
+      - email
+      - password
+
+  - name: profile-service
+    endpoints:
+      - /profile/view
+      - /profile/update
+    methods:
+      - GET
+      - POST
+    tracks:
+      - name
+      - email
+      - phone
+
+  - name: order-service
+    endpoints:
+      - /order/create
+      - /order/status
+    methods:
+      - POST
+      - GET
+    tracks:
+      - name
+      - address
+      - payment_info
